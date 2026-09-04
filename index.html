@@ -1,0 +1,550 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SMCC-CCIS Week 2026: campus event showcasing student projects, programming skills, innovation, and cybersecurity awareness.">
+    <title>SMCC-CCIS Week 2026</title>
+    <style>
+     body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background-color: #f5f7fb;
+        color: #080808;
+        }
+
+        /* Header */
+
+        header {
+            background-color: green;
+            text-align: center;
+            color: #e1e8f0;
+            padding: 20px;
+        }
+
+        header h1 {
+            font-size: clamp(1.6rem, 5vw, 2.8rem);
+            margin: 0 0 10px;
+            line-height: 1.2;
+        }
+
+        header p {
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        /* Navigation */
+
+        nav {
+            background-color: #e1e8f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            padding: 15px 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #004b8d;
+            font-weight: bold;
+            padding: 8px 12px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: green;
+        }
+
+        nav,
+        section,
+        article,
+        aside,
+        footer {
+            padding: 15px 20px;
+        }
+
+        /* Layout */
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .main-section {
+            flex: 3 1 250px;
+        }
+
+        .sidebar {
+            flex: 1 1 200px;
+            background: white;
+            border-radius: 6px;
+            padding: 15px;
+            box-shadow: 0 0 4px rgba(0,0,0,.1);
+            align-self: start;
+        }
+
+        /* Cards */
+
+        .card {
+            background: white;
+            border-radius: 8px;
+            padding: 15px 20px;
+            box-shadow: 0 0 4px rgba(0,0,0,.1);
+            margin-bottom: 20px;
+        }
+
+        .card img,
+        .card iframe {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin-top: 10px;
+        }
+
+        /* Code Block */
+
+        .code-block {
+            background: #222;
+            color: #e8e8e8;
+            padding: 15px;
+            border-radius: 6px;
+            overflow-x: auto;
+            width: 100%;
+            box-sizing: border-box;
+            font-size: 1.1em;
+            font-family: "Courier New", monospace;
+            line-height: 1.5;
+        }
+
+        .code-block samp {
+            color: #4caf50;
+        }
+
+        .code-block .comment {
+            color: #7fbf7f;
+        }
+
+        kbd {
+            background: #222;
+            color: #fff;
+            border-radius: 4px;
+            padding: 3px 8px;
+            font-family: "Courier New", monospace;
+            font-weight: bold;
+        }
+
+        /* Form */
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .form-row label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 4px;
+        }
+
+        .form-row input,
+        .form-row select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccd3dc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .field-group {
+            margin-bottom: 16px;
+        }
+
+        .field-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 4px;
+        }
+
+        .field-group input:not([type="radio"]):not([type="checkbox"]),
+        .field-group select,
+        .field-group textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccd3dc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-family: inherit;
+        }
+
+        .radio-option,
+        .checkbox-option {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+
+        .radio-option input[type="radio"],
+        .checkbox-option input[type="checkbox"] {
+            width: auto;
+            flex: 0 0 auto;
+            margin: 0;
+        }
+
+        .radio-option label,
+        .checkbox-option label {
+            font-weight: normal;
+            margin-bottom: 0;
+        }
+
+        .btn {
+            background: green;
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .btn-secondary {
+            background: #555;
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        /* FAQ */
+
+        details {
+            margin-bottom: 10px;
+        }
+
+        summary {
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        #faqList.hidden {
+            display: none;
+        }
+
+        .faq-item {
+            margin-bottom: 14px;
+        }
+
+        .faq-item h3 {
+            margin: 0 0 4px;
+        }
+
+        .faq-item p {
+            margin: 0;
+        }
+
+        /* Footer */
+
+        footer {
+            background: #777;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        footer p {
+            word-wrap: break-word;
+            line-height: 1.6;
+            font-size: clamp(0.8rem, 2vw, 1rem);
+        }
+
+        /* Responsive */
+
+        @media (max-width: 900px) {
+
+            .container {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: auto;
+            }
+        }
+
+        @media (max-width: 700px) {
+
+            header {
+                padding: 15px;
+            }
+
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            header p {
+                font-size: 1rem;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            nav a {
+                width: 100%;
+                text-align: center;
+                padding: 10px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            footer {
+                padding: 8px 12px;
+            }
+        }
+     </style>
+</head>
+<body>
+
+    <header>
+        <h1>SMCC-CCIS Week 2026 - Campus Event Showcase</h1>
+        <p>Celebrating innovation, technology, and collaboration across the campus &#128526;</p>
+    </header>
+
+    <nav>
+        <a href="#overview">Overview</a>
+        <a href="#schedule">Schedule</a>
+        <a href="#location">Location</a>
+        <a href="#registration">Registration</a>
+        <a href="#faq">FAQ</a>
+        <a href="#tech-demo">Tech Demo</a>
+        <a href="#dev-notes">Dev Notes</a>
+    </nav>
+
+    <main class="container">
+        <section class="main-section">
+
+            <article class="card" id="overview">
+                <h2>Event Overview</h2>
+                <p>SMCC-CCIS Week 2026 is an annual campus event that highlights student projects, programming
+                    skills, innovation, cybersecurity awareness, and collaboration among IT professionals.</p>
+                <p>Join us for a week of learning, networking, and fun &amp; excitement as we celebrate technology
+                    in education. &#10003;</p>
+                <img src="image/Screenshot 2026-07-01 201116.png" width="1100" height="1100" alt="ccis">
+            </article>
+
+            <article class="card" id="schedule">
+                <h2>Event Schedule &#10003;</h2>
+                <p>Here is the simplified schedule of activities:</p>
+                <ul>
+                    <li>Day 1: Opening Program and Keynote Talks</li>
+                    <li>Day 2: Coding Hackathon</li>
+                    <li>Day 3: Robotics and IoT Exhibition</li>
+                    <li>Day 4: Cybersecurity Awareness Session</li>
+                    <li>Day 5: Project Showcase and Awarding Ceremony</li>
+                </ul>
+            </article>
+
+            <article class="card" id="location">
+                <h2>Location</h2>
+                <p>All events will be held at the SMCC-CCIS Building, Main Campus. Room assignments per activity
+                    will be posted here once finalized.</p>
+
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1970.412584000125!2d125.34046409080733!3d8.988230010183981!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3301ca2f04581cbb%3A0xe4e2656c7835d5f2!2sSaint%20Michael%20College%20of%20Caraga!5e0!3m2!1sen!2sph!4v1782908403573!5m2!1sen!2sph" width="700" height="700" style="border:0;" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+
+            </article>
+
+            <article class="card" id="registration">
+                <h2>Event Registration Form &#128221;</h2>
+                <p>Please complete the form below to register for SMCC-CCIS Week 2026.</p>
+
+                <form id="registrationForm">
+
+                    <div class="field-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" name="fullname" placeholder="Enter your full name" required>
+                    </div>
+
+                    <div class="field-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="example@gmail.com" required>
+                    </div>
+
+                    <div class="field-group">
+                        <label for="Studentid">Student ID Number:</label>
+                        <input type="text" id="Studentid" name="Studentid" placeholder="Example: 2023-00123" required>
+                    </div>
+
+                    <div class="field-group">
+                        <label for="contactnumber">Contact Number:</label>
+                        <input type="tel" id="contactnumber" name="contactnumber" placeholder="Example: 09301657701" required>
+                    </div>
+
+                    <div class="field-group">
+                        <label for="yearlevel">Year Level:</label>
+                        <select id="yearlevel" name="yearlevel" required>
+                            <option value="">Select your year level</option>
+                            <option value="1st">1st Year</option>
+                            <option value="2nd">2nd Year</option>
+                            <option value="3rd">3rd Year</option>
+                            <option value="4th">4th Year</option>
+                        </select>
+                    </div>
+
+                    <div class="field-group">
+                        <p><strong>Participant Type:</strong></p>
+                        <div class="radio-option">
+                            <input type="radio" id="type-student" name="participanttype" value="Student" required>
+                            <label for="type-student">Student</label>
+                        </div>
+
+                        <div class="radio-option">
+                            <input type="radio" id="type-faculty" name="participanttype" value="Faculty">
+                            <label for="type-faculty">Faculty</label>
+                        </div>
+
+                        <div class="radio-option">
+                            <input type="radio" id="type-guest" name="participanttype" value="Guest">
+                            <label for="type-guest">Guest</label>
+                        </div>
+                    </div>
+
+                    <div class="field-group">
+                        <label>Areas of Interest:</label>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="interest-coding" name="interests" value="Coding">
+                            <label for="interest-coding">Coding</label>
+                        </div>
+
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="interest-robotics" name="interests" value="Robotics">
+                            <label for="interest-robotics">Robotics</label>
+                        </div>
+
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="interest-cybersecurity" name="interests" value="Cybersecurity">
+                            <label for="interest-cybersecurity">Cybersecurity</label>
+                        </div>
+
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="interest-innovation" name="interests" value="Innovation">
+                            <label for="interest-innovation">Innovation</label>
+                        </div>
+                    </div>
+
+                    <div class="field-group">
+                        <label for="proof">Upload Proof of Registration or School ID:</label>
+                        <input type="file" id="proof" name="proof">
+                    </div>
+
+                    <div class="field-group">
+                        <label for="reason">Reason for Joining:</label>
+                        <textarea id="reason" name="reason" rows="4" placeholder="Write your reason for joining the event..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn">Submit Registration</button>
+                    <button type="reset" class="btn-secondary">Clear Form</button>
+
+                </form>
+
+            </article>
+
+            <article class="card" id="tech-demo">
+                <h2>Tech Demo</h2>
+                <p>Drop by the Tech Demo booths to see student-built projects, from web apps to embedded systems.
+                    Schedule for booth slots will be posted closer to the event.</p>
+            </article>
+
+            <article class="card" id="dev-notes">
+                <h2>Tech Demo &amp; Developer Notes</h2>
+
+                <h3>Sample Command Using &lt;pre&gt; and &lt;code&gt;</h3>
+                <pre class="code-block"><code>// Clone the SMCC-CCIS Week repository
+git clone https://github.com/example/ccisweek2026.git
+
+// Install dependencies
+npm install
+
+// Start development server
+npm run dev</code></pre>
+                <p>To save your changes, press <kbd>Ctrl</kbd> + <kbd>S</kbd>. Example system output using
+                    &lt;samp&gt;: <samp>Build successful. No errors found.</samp></p>
+
+                <h3>Registration URL Example</h3>
+                <p>Example registration URL with encoded spaces and symbols:</p>
+                <pre class="code-block"><code>https://myschool.edu/events/register?event=SMCC%20CCIS%20Week%202026&amp;section=A</code></pre>
+                <p>Here, <strong>%20</strong> represents a space character in the URL.</p>
+
+                <h3>HTML vs XHTML Example</h3>
+                <p>Compare the following snippets:</p>
+                <pre class="code-block"><code>&lt;!-- HTML style --&gt;
+&lt;br&gt;
+&lt;img src="images/logo.png" alt="Event Logo"&gt;
+
+&lt;!-- XHTML style --&gt;
+&lt;br /&gt;
+&lt;img src="images/logo.png" alt="Event Logo" /&gt;</code></pre>
+            </article>
+
+            <article class="card" id="faq">
+                <h2>Frequently Asked Questions</h2>
+                <p>Use the button below to interact with the page:</p>
+                <button type="button" class="btn" onclick="document.getElementById('faqList').classList.toggle('hidden')">Toggle FAQ Visibility</button>
+
+                <div id="faqList">
+                    <div class="faq-item">
+                        <h3>1. Is the event open to all students?</h3>
+                        <p>Yes, the event is open to all departments and year levels.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>2. Do I need to register?</h3>
+                        <p>Yes, registration is required for competitions, workshops, and project showcases.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>3. Is there a registration fee?</h3>
+                        <p>No, all SMCC-CCIS Week 2026 activities are free of charge.</p>
+                    </div>
+                </div>
+            </article>
+
+        </section>
+
+        <aside class="sidebar">
+            <h2>Event Info &amp; Contacts</h2>
+            <p>SMCC-CCIS Week 2026 is organized by the College of Computing and Information Sciences.
+                For inquiries, email: ccisweek@myschool.edu</p>
+
+            <h3>Event Highlights:</h3>
+            <ul>
+                <li>Live coding sessions</li>
+                <li>Industry speakers</li>
+                <li>Project exhibits</li>
+            </ul>
+            <hr>
+            <h3>Character Encoding</h3>
+            <p>All text content is encoded in UTF-8, ensuring proper display of special characters and symbols.</p>
+            <pre class="code-block"><code>&lt;meta charset=&quot;UTF-8&quot;&gt;</code></pre>
+        </aside>
+    </main>
+
+    <footer>
+        <p>
+            Built with advanced HTML Concepts &middot; InfoHub Sample &nbsp;&starf; &nbsp; &copy; 2026
+        </p>
+    </footer>
+
+</body>
+</html>
